@@ -15,14 +15,14 @@ class OptionsTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        \DB::statement('SET IDENTITY_INSERT options OFF');
 
         \DB::table('options')->delete();
 
-        \DB::table('options')->insert(array (
-            0 =>
-                array (
-                    'id' => 1,
+        \DB::table('options')->insert([
+
+                [
                     'option_id' => NULL,
                     'nombre' => 'Dashboard',
                     'ruta' => 'dashboard',
@@ -35,10 +35,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2020-08-26 11:51:32',
                     'deleted_at' => NULL,
-                ),
-            1 =>
-                array (
-                    'id' => 2,
+                ],
+
+                [
                     'option_id' => NULL,
                     'nombre' => 'Admin',
                     'ruta' => '',
@@ -51,10 +50,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:01:22',
                     'deleted_at' => NULL,
-                ),
-            2 =>
-                array (
-                    'id' => 3,
+                ],
+
+                [
                     'option_id' => 2,
                     'nombre' => 'Usuarios',
                     'ruta' => 'users.index',
@@ -67,10 +65,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:19:48',
                     'deleted_at' => NULL,
-                ),
-            3 =>
-                array (
-                    'id' => 4,
+                ],
+
+                [
                     'option_id' => 2,
                     'nombre' => 'Roles',
                     'ruta' => 'roles.index',
@@ -83,10 +80,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:19:48',
                     'deleted_at' => NULL,
-                ),
-            4 =>
-                array (
-                    'id' => 5,
+                ],
+
+                [
                     'option_id' => 2,
                     'nombre' => 'Permisos',
                     'ruta' => 'permissions.index',
@@ -99,10 +95,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:19:48',
                     'deleted_at' => NULL,
-                ),
-            5 =>
-                array (
-                    'id' => 6,
+                ],
+
+                [
                     'option_id' => 2,
                     'nombre' => 'Configuraciones',
                     'ruta' => 'profile.business',
@@ -115,10 +110,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2021-03-14 21:17:37',
                     'updated_at' => '2021-03-14 21:19:48',
                     'deleted_at' => NULL,
-                ),
-            6 =>
-                array (
-                    'id' => 7,
+                ],
+
+                [
                     'option_id' => NULL,
                     'nombre' => 'Developer',
                     'ruta' => 'x',
@@ -131,10 +125,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2021-03-14 21:11:34',
                     'updated_at' => '2021-03-14 21:13:25',
                     'deleted_at' => NULL,
-                ),
-            7 =>
-                array (
-                    'id' => 8,
+                ],
+
+                [
                     'option_id' => 7,
                     'nombre' => 'Prueba API\'S',
                     'ruta' => 'dev.prueba.api',
@@ -147,10 +140,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:16:13',
                     'deleted_at' => NULL,
-                ),
-            8 =>
-                array (
-                    'id' => 9,
+                ],
+
+                [
                     'option_id' => 7,
                     'nombre' => 'Configuraciones',
                     'ruta' => 'dev.configurations.index',
@@ -163,10 +155,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:15:59',
                     'deleted_at' => NULL,
-                ),
-            9 =>
-                array (
-                    'id' => 10,
+                ],
+
+                [
                     'option_id' => 7,
                     'nombre' => 'Clientes Passport',
                     'ruta' => 'dev.passport.clients',
@@ -179,10 +170,9 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:16:22',
                     'deleted_at' => NULL,
-                ),
-            10 =>
-                array (
-                    'id' => 11,
+                ],
+
+                [
                     'option_id' => 7,
                     'nombre' => 'Menu',
                     'ruta' => 'options.index',
@@ -195,12 +185,11 @@ class OptionsTableSeeder extends Seeder
                     'created_at' => '2020-08-26 11:46:42',
                     'updated_at' => '2021-03-14 21:19:48',
                     'deleted_at' => NULL,
-                ),
-        ));
+                ],
+        ]);
 
-        $this->genraColoresIcons();
+        \DB::statement('SET IDENTITY_INSERT options ON');
 
-        \DB::statement('SET FOREIGN_KEY_CHECKS=1');
 
     }
 
