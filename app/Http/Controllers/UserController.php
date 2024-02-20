@@ -43,7 +43,6 @@ class UserController extends AppBaseController
         $scope = new ScopeUserDataTable();
         $userDataTable->addScope($scope);
 
-
         return $userDataTable->render('admin.users.index');
     }
 

@@ -97,3 +97,9 @@ Route::group(['prefix' => ''], function () {
 
 });
 
+
+Route::resource('tipoMonedas', App\Http\Controllers\TipoMonedaController::class);
+Route::resource('tipoMovimientos', App\Http\Controllers\TipoMovimientoController::class);
+Route::resource('tipoCuentas', App\Http\Controllers\TipoCuentaController::class);
+
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
